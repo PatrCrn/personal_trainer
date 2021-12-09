@@ -25,10 +25,17 @@ export default function Addcustomer(props) {
         handleClose();
     }
 
+    const handleDownload = () => {
+        props.downloadCustomers();
+    };
+
     return (
         <div>
             <Button style={{margin: 20}} variant="contained" onClick={handleClickOpen}>
                 Add a customer
+            </Button>
+            <Button style={{margin: 20}} variant="contained" onClick={handleDownload}>
+                Download Customers
             </Button>
             <Dialog open={open} onClose={handleClose}>
                 <DialogTitle>Add a customer</DialogTitle>
