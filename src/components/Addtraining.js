@@ -16,7 +16,7 @@ import {useState} from "react";
 export default function Addtraining(props) {
     const [open, setOpen] = React.useState(false);
     const [training, setTraining] = useState({
-        date:dayjs(new Date()).format("YYYY-MM-DD'T'HH:mm:ss.SSS"), activity:'', duration:0, customer:''
+        date:dayjs(new Date()).format("YYYY-MM-DD"), activity:'', duration:0, customer:''
     });
     const [customers, setCustomers] = useState([]);
 
@@ -64,12 +64,6 @@ export default function Addtraining(props) {
                         variant="standard"
                         required={true}
                     />
-                    {/*<DateTimePicker
-                        label="Date&Time picker"
-                        value={training.date}
-                        onChange={e=>handeInputChange(e)}
-                        //renderInput={(params) => <TextField {...params} />}
-                    />*/}
                     <TextField
                         margin="dense"
                         name="activity"
@@ -98,7 +92,7 @@ export default function Addtraining(props) {
                         onChange={e=>handeInputChange(e)}
                     >
                         {customers.map(customer => (
-                            <MenuItem value={"https://localhost:8080/api/customers/" + customer.links[0].href.slice(49)} key={customer.id}>{customer.firstname} {customer.lastname}</MenuItem>
+                            <MenuItem value={"https://customerrest.herokuapp.com/api/customers/" + customer.links[0].href.slice(49)} key={customer.id}>{customer.firstname} {customer.lastname}</MenuItem>
                             )
                         )}
                     </Select>

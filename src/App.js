@@ -3,8 +3,9 @@ import Customerlist from "./components/Customerlist";
 import React from "react"
 import {Button, AppBar, Box, Toolbar, Typography} from "@material-ui/core";
 import Traininglist from "./components/Traininglist";
+import Calendar from "./components/Calendar";
 
-const pages = ['Customers', 'Trainings'];
+const pages = ['Customers', 'Trainings', 'Calendar'];
 
 function App() {
   const [anchorElNav, setAnchorElNav] = React.useState("Customers");
@@ -58,6 +59,13 @@ function App() {
           <Traininglist />
         </div>
     )
+  } else if (anchorElNav === "Calendar") {
+      return (
+          <div className="App">
+              <MyAppBar />
+              <Calendar />
+          </div>
+      )
   }
 }
 
