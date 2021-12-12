@@ -4,8 +4,9 @@ import React from "react"
 import {Button, AppBar, Box, Toolbar, Typography} from "@material-ui/core";
 import Traininglist from "./components/Traininglist";
 import Calendar from "./components/Calendar";
+import Statistics from "./components/Statistics";
 
-const pages = ['Customers', 'Trainings', 'Calendar'];
+const pages = ['Customers', 'Trainings', 'Calendar', "Statistics"];
 
 function App() {
   const [anchorElNav, setAnchorElNav] = React.useState("Customers");
@@ -64,6 +65,14 @@ function App() {
           <div className="App">
               <MyAppBar />
               <Calendar />
+          </div>
+      )
+  }
+  else if (anchorElNav === "Statistics") {
+      return (
+          <div className="App">
+              <MyAppBar />
+              <Statistics />
           </div>
       )
   }
